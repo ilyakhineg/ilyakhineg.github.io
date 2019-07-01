@@ -1,0 +1,43 @@
+
+.section{
+	padding: 30px;
+	
+}
+.header{
+	font-size: 20px;
+	font-family: montserrat;
+	margin:60px auto; 
+}
+.header span{
+	display:block;
+}
+.form-header, .section-header{
+	font-size: 20px;
+	font-weight:700;
+	font-family: montserrat
+}
+.form {
+	border: 5px solid #2727d9;
+	padding:30px 20px;
+	}
+.form-text{
+	margin-bottom: 15px;
+}
+.form-btn {
+	background-color: #2727d9;
+}
+.feature p {
+	margin-top: 30px;
+	font-size: 20px;
+	font-weight:700;
+	font-family: montserrat
+}
+h2 {
+	margin-bottom: 30px
+}
+.feature-box{
+	margin:30px auto;
+}
+.video{
+	margin-bottom: 30px
+}
