@@ -1,0 +1,339 @@
+/* fonts*/
+@font-face {
+  font-family: 'Raleway-bold';
+  src: url('../fonts/Raleway-Bold.eot');
+  src: url('../fonts/Raleway-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Raleway-Bold.woff2') format('woff2'), url('../fonts/Raleway-Bold.woff') format('woff'), url('../fonts/Raleway-Bold.ttf') format('truetype'), url('../fonts/Raleway-Bold.svg#Raleway-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway-reg';
+  src: url('../fonts/Raleway-Regular.eot');
+  src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Raleway-Regular.woff2') format('woff2'), url('../fonts/Raleway-Regular.woff') format('woff'), url('../fonts/Raleway-Regular.ttf') format('truetype'), url('../fonts/Raleway-Regular.svg#Raleway-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Colors */
+/* Basic settings*/
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'Raleway-reg', sans-serif;
+}
+button,
+input,
+a {
+  outline: none;
+}
+section {
+  padding: 10rem 0;
+}
+/*Main (page one)*/
+.main {
+  margin-top: 0;
+  padding: 3rem 0;
+  background: #ffffff url(../img/1bg.jpg) center center no-repeat;
+  background-size: cover;
+  /*подпись*/
+  /*зеленая вставка*/
+  /*подпись после зелеой вставки*/
+  /*форма для заполения*/
+}
+.main-content {
+  margin-top: 7rem;
+  /*заголовок*/
+}
+.main-content h1 {
+  text-transform: uppercase;
+  font-family: 'Raleway-bold', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  line-height: 1.5;
+}
+.main-subtitle {
+  font-size: 2.4rem;
+  margin-bottom: 4rem;
+}
+.main span {
+  display: inline-block;
+  padding: 2rem 3rem;
+  background-color: #a2c34e;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-align: center;
+}
+.main strong {
+  font-size: 2.5rem;
+}
+.main-trigger {
+  display: block;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-family: 'Raleway-bold', sans-serif;
+  margin-top: 4rem;
+}
+.main-form {
+  padding: 5rem 5rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+.main-form-header {
+  margin-bottom: 4rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.main-form-header strong {
+  font-size: 1.8rem;
+}
+.main-form-input {
+  display: block;
+  width: 100%;
+  margin: 2rem 0;
+  border: 1px solid #dddddd;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+.main-form label {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  padding: 0.5rem;
+  background-color: #ffffff;
+}
+.main-form-button {
+  display: block;
+  font-size: 1.6rem;
+  height: 5rem;
+  width: 100%;
+}
+.main-form small {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+/*шапка сайта*/
+.header {
+  height: 7rem;
+  text-align: right;
+}
+/*логотип*/
+.logo img {
+  height: 7rem;
+  width: auto;
+}
+/*кнопка в шапке*/
+.button {
+  background-color: #352331;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  -webkit-transition: all 0.2sec;
+  transition: all 0.2sec;
+}
+.button:focus {
+  outline: none;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #54374d;
+}
+.wrap {
+  display: table;
+  height: 7rem;
+  width: 100%;
+}
+.wrap-block {
+  display: table-cell;
+  vertical-align: middle;
+}
+/*телефон-ссыла*/
+.phone-link {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 2rem;
+  font-family: 'Raleway-bold', sans-serif;
+  height: 7rem;
+  line-height: 7rem;
+  color: #1a1820;
+}
+/*блок преимуществ*/
+.section-header {
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: 'Raleway-bold', sans-serif;
+  margin-bottom: 8rem;
+}
+.features-block {
+  text-align: center;
+}
+.features-block h3 {
+  font-size: 2rem;
+  font-family: 'Raleway-bold', sans-serif;
+  margin-bottom: 3rem;
+}
+.features-block p {
+  font-size: 1.6rem;
+}
+.features-img {
+  height: 20rem;
+  margin-bottom: 3rem;
+}
+.features-img img {
+  display: block;
+  margin: 0 auto;
+}
+.slick-active {
+  outline: none;
+}
+.arrow {
+  position: absolute;
+  z-index: 99;
+  height: 2rem;
+  width: 2rem;
+  border: none;
+}
+.arrow:focus {
+  outline: none;
+}
+.prev {
+  background: url(../img/arrow-left.svg) center no-repeat;
+  background-size: 100%;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.next {
+  background: url(../img/arrow-right.svg) center no-repeat;
+  background-size: 100%;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+/*блок цен*/
+.price {
+  background-color: #87a638;
+  background-size: cover;
+}
+.price-button {
+  text-align: right;
+}
+.price-header {
+  font-size: -2rem;
+  text-transform: uppercase;
+  font-family: 'Raleway-bold', sans-serif;
+  margin: 2rem auto;
+  text-align: center;
+}
+.price-list {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+.price-list ul {
+  list-style: none;
+  padding: 0;
+}
+.price-list li::before {
+  content: url(../img/check.svg);
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+.price-sheet {
+  padding: 2rem 0;
+  text-align: center;
+  background-color: #ffffff;
+  margin-top: 3rem;
+  min-height: 50rem;
+}
+.price-sheet h4 {
+  display: block;
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  font-family: 'Raleway-bold', sans-serif;
+}
+.price-sheet img {
+  display: block;
+  width: 80%;
+  margin: 2rem auto;
+}
+.price-sheet p {
+  display: block;
+  font-size: 1.8rem;
+  font-family: 'Raleway-bold', sans-serif;
+  margin-bottom: 2rem;
+}
+/*модальное окно*/
+.popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.popup-content {
+  position: fixed;
+  background-color: #ffffff;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 2rem 4rem;
+}
+.popup-form {
+  padding: 0;
+}
+.popup-close {
+  position: absolute;
+  top: -2.5rem;
+  right: -2.5rem;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font-size: 4rem;
+  color: #ffffff;
+}
+.popup-close:focus {
+  outline: none;
+}
+.popup-content {
+  text-align: center;
+}
+.popup-header {
+  font-family: 'Raleway-bold', sans-serif;
+}
+@media (max-width: 991px) {
+  .phone-block {
+    text-align: center;
+  }
+  .main-title {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+}
+@media (max-width: 575px) {
+  .header {
+    text-align: center;
+    margin-bottom: 15rem;
+  }
+  .main-title {
+    margin: 2rem;
+  }
+  .main-title h1 {
+    font-size: 2rem;
+  }
+}
