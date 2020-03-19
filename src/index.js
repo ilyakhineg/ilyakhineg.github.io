@@ -62,19 +62,25 @@ const App = () => {
   };
 
   const addList = async () => {
-    let newColumn =  await fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json());
+    let newColumn =  await fetch('https://jsonplaceholder.typicode.com/users')
+      .then(
+        resolve => resolve.json(),
+        reject => console.log(reject)
+      );
     let lastId = taskMap.length ? taskMap.slice(-1)[0].id : null,
         newList = [{
           id: lastId === null? 0 : lastId + 1,
           name:'',
-          list: newColumn.map(user => {
-            return {
-              num: user.id,
-              title: user.name,
-              task: user.email,
-              height: 41
-            }
-          })}];
+          list: newColumn.length
+            ? newColumn.map(user => {
+              return {
+                num: user.id,
+                title: user.name,
+                task: user.email,
+                height: 41
+              }
+            })
+            : []}];
     setTaskMap(taskMap.concat(newList));
     return taskMap;
   };
