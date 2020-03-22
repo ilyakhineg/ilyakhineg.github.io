@@ -48,6 +48,11 @@ const App = () => {
     } )
   });
 
+  /**
+   * adds new card to list of tasks
+   * @param {number} id - list id
+   */
+
   const addCard = (id) => {
     const newCard = taskMap.map(taskList => {
       if (taskList.id === id) {
@@ -88,6 +93,11 @@ const App = () => {
     setTaskMap([...taskMap, newList])
   };
 
+  /**
+   * changes name of specified list
+   * @param {number} id - list id
+   * @param {string} string - new name
+   */
   const changeName = (id, string) => {
     const newName = taskMap.map(taskList =>
       taskList.id === id ? { ...taskList, name: string } : taskList
@@ -96,6 +106,12 @@ const App = () => {
     setTaskMap(newName);
   };
 
+  /**
+   * changes card test and height
+   * @param {number} id - list id
+   * @param {number} num - card num
+   * @param {object} e - event
+   */
   const changeTask = (id, num, e) => {
     const setNewHeight = event => {
       event.target.style.height = 'inherit';
