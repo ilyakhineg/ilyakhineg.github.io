@@ -49,7 +49,7 @@ const App = () => {
   });
 
   const addCard = (id) => {
-    setTaskMap(taskMap.map(taskList => {
+    const newCard = taskMap.map(taskList => {
       if (taskList.id === id) {
         const list = taskList.list;
         list.push({
@@ -58,11 +58,12 @@ const App = () => {
         })
       }
       return taskList
-    }));
+    });
+    setTaskMap(newCard)
   };
 
   const addList = async () => {
-    const newColumn =  await fetch('https://jsonplaceholder.typicode.com/users')
+    const getData =  await fetch('https://jsonplaceholder.typicode.com/users')
       .then(resolve => resolve.json())
       .catch(error => console.log(error));
 
@@ -74,8 +75,8 @@ const App = () => {
       list:[]
     };
 
-    if(newColumn.length) {
-      newList.list = newColumn.map(user => ({
+    if(getData.length) {
+      newList.list = getData.map(user => ({
             num: user.id,
             title: user.name,
             task: user.email,
@@ -84,53 +85,59 @@ const App = () => {
       )
     }
 
-    setTaskMap(taskMap.concat(newList))
+    setTaskMap([...taskMap, newList])
   };
 
   const changeName = (id, string) => {
-    setTaskMap(taskMap.map(taskList => {
-      if (taskList.id === id) taskList.name = string;
-      return taskList;
-    }))
+    const newName = taskMap.map(taskList =>
+      taskList.id === id ? { ...taskList, name: string } : taskList
+    );
+
+    setTaskMap(newName);
   };
 
   const changeTask = (id, num, e) => {
-    setTaskMap(taskMap.map(taskList => {
+    const setNewHeight = event => {
+      event.target.style.height = 'inherit';
+      event.target.style.height = `${event.target.scrollHeight}px`;
+      return event.target.style.height
+    };
+
+    const newTask = taskMap.map(taskList => {
       if (taskList.id === id) {
-        taskList.list.map(card => {
-          if (card.num === num) {
-            card.task = e.target.value;
-            e.target.style.height = 'inherit';
-            e.target.style.height = `${e.target.scrollHeight}px`;
-            card.height = e.target.style.height;
-          }
-        })
+         taskList.list.map(card =>
+          card.num === num ? {...card, task: e.target.value, height: setNewHeight(e)} : card
+        )
       }
       return taskList
-    }))
+    });
+
+    setTaskMap(newTask)
   };
 
-  const changeTitle = (id, num, title) => {
-    setTaskMap(taskMap.map(taskList => {
+  const changeTitle = (id, num, string) => {
+    const newTitle = taskMap.map(taskList => {
       if (taskList.id === id) {
-        taskList.list.map(card => {
-          if (card.num === num) card.title = title;
-        })
+        taskList.list.map(card =>
+          card.num === num ? { ...card, title: string} : card
+        )
       }
       return taskList
-    }))
+    });
+    setTaskMap(newTitle)
   };
 
   const removeTask = (id, num) => {
-    setTaskMap(taskMap.map(taskList => {
+    const newTaskList = taskMap.map(taskList => {
       if (taskList.id === id) taskList.list = taskList.list.filter(task => task.num !== num);
       return taskList
-    }))
+    });
+    setTaskMap(newTaskList)
   };
 
   const removeTasklist = (id) =>{
-    setTaskMap(taskMap.filter(tasklist => tasklist.id !== id));
-    return taskMap;
+    const newTaskMap = taskMap.filter(tasklist => tasklist.id !== id);
+    setTaskMap(newTaskMap);
   };
 
   return(
