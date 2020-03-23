@@ -3,7 +3,7 @@ import './index.css';
 import { Context } from './context';
 
 export const TaskCard = (props) => {
-  const {removeTask, changeTitle, changeTask} = useContext(Context);
+  const {removeTask, changeTitle, changeTask, postTask} = useContext(Context);
 
   return (
     <div className="card">
@@ -26,6 +26,7 @@ export const TaskCard = (props) => {
         style = {{height: props.task.height}}
         placeholder="Note"
         onChange={e => changeTask(props.taskList.id, props.task.num, e)}
+        onBlur={e=> postTask(e)}
         defaultValue={props.task.task}
       >
       </textarea>

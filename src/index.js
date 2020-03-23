@@ -54,17 +54,29 @@ const App = () => {
    */
 
   const addCard = (id) => {
-    const newCard = taskMap.map(taskList => {
+    // const newCard = taskMap.map(taskList => {
+    //   if (taskList.id === id) {
+    //     const list = taskList.list;
+    //     list.push({
+    //       num: list.length ? list.slice(-1)[0].num + 1 : 0,
+    //       task: ''
+    //     })
+    //   }
+    //   return taskList
+    // });
+    // setTaskMap(newCard)
+
+    for (let i = 0; i <= taskMap.length-1; i++) {
+      let taskList = taskMap[i];
       if (taskList.id === id) {
         const list = taskList.list;
-        list.push({
-          num: list.length ? list.slice(-1)[0].num + 1 : 0,
-          task: ''
-        })
+        const number = list.length ? list.slice(-1)[0].num + 1 : 0;
+        taskList.list = [...list, {num: number, task: ''}];
+        console.log(taskMap);
+        return taskList
       }
-      return taskList
-    });
-    setTaskMap(newCard)
+    }
+    setTaskMap(taskMap)
   };
 
   const addList = async () => {
@@ -112,7 +124,7 @@ const App = () => {
    * @param {number} num - card num
    * @param {object} e - event
    */
-  const changeTask = (id, num, e) => {
+  const changeTask = async (id, num, e) => {
     const setNewHeight = event => {
       event.target.style.height = 'inherit';
       event.target.style.height = `${event.target.scrollHeight}px`;
@@ -127,8 +139,21 @@ const App = () => {
       }
       return taskList
     });
-
     setTaskMap(newTask)
+  };
+
+  const postTask = async e => {
+    try {
+      const postData = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json;charset=utf-8'},
+        body: JSON.stringify({inputData: e.target.value})
+      });
+      const res = await postData.json();
+      console.log('success:', JSON.stringify(res))
+    } catch (error) {
+      console.warn(error)
+    }
   };
 
   const changeTitle = (id, num, string) => {
@@ -157,7 +182,7 @@ const App = () => {
   };
 
   return(
-    <Context.Provider value = {{removeTask, changeTitle, changeTask}}>
+    <Context.Provider value = {{removeTask, changeTitle, changeTask, postTask}}>
       <div className = "app">
         <div className="navbar__container">
           <div className="navbar">
