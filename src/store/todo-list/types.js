@@ -1,0 +1,9 @@
+export const INIT = '@@INIT';
+export const ADD_CARD = 'ADD_CARD';
+export const ADD_LIST = 'ADD_LIST';
+export const CHANGE_TASK = 'CHANGE_TASK';
+export const CHANGE_TASK_TITLE = 'CHANGE_TASK_TITLE';
+export const CHANGE_TASKLIST_NAME = 'CHANGE_TASKLIST_NAME';
+// export const POST_TASK = 'POST_TASK';
+export const REMOVE_TASK = 'REMOVE_TASK';
+export const REMOVE_TASKLIST = 'REMOVE_TASKLIST';
